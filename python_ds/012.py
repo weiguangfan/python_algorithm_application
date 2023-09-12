@@ -3,6 +3,7 @@ import string
 
 
 def infixToPostfix(infixexpr):
+    """从中序到后序的通用转换法"""
     # 保存运算符的优先级值
     prec = {}
     prec["*"] = 3

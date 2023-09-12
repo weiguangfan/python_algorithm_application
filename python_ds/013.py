@@ -2,6 +2,7 @@ from pythonds.basic import Stack
 
 
 def postfixEval(postfixExpr):
+    """计算后序表达式"""
     # 保存操作数
     operandStack = Stack()
     # 将输入的后序表达式转换成一个列表

@@ -6,9 +6,11 @@ class Queue:
         return self.items == []
 
     def enqueue(self,item):
+        # 队列的尾部在列表的位置0处
         self.items.insert(0,item)
 
     def dequeue(self):
+        # pop则可用于移除队列头部的元素（列表中的最后一个元素）
         return self.items.pop()
 
     def size(self):
