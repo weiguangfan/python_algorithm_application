@@ -9,7 +9,7 @@ def toStr(n, base):
         return convertString[n]
     else:
         # 通过递归调用以及除法来分解问题
-        return toStr(n//base, base) + convertString[n%base]
+        return toStr(n//base, base) + convertString[n % base]
 
 
 rStack = Stack()
@@ -20,5 +20,14 @@ def toStr1(n, base):
     if n < base:
         rStack.push(convertString[n])
     else:
+        # 不拼接递归调用toStr的结果和convertString的查找结果，而是在进行递归调用之前把字符串压入栈中。
+        # 只需执行出栈操作和拼接操作，就能得到最终结果
         rStack.push(convertString[n % base])
         toStr(n//base, base)
+
+
+if __name__ == '__main__':
+    print(toStr(769, 10))
+    print(toStr(10, 2))
+
+
